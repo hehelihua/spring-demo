@@ -1,4 +1,4 @@
-package com.example.springtestdemo.area;
+package com.example.springtestdemo.bill;
 
 import java.util.List;
 
@@ -14,6 +14,16 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> queryUserList() {
 		return userMapper.queryUserList();
+	}
+
+	@Override
+	public List<BillType> queryBillTypeList() {
+		return userMapper.queryBillTypeList();
+	}
+
+	@Override
+	public List<Bill> queryBillList(Bill bill) {
+		return userMapper.queryBillList(bill);
 	}
 
 }

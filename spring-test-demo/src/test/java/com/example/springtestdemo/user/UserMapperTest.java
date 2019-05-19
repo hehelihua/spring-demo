@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.Test;
 
 import com.example.springtestdemo.BaseTest;
-import com.example.springtestdemo.area.UserMapper;
+import com.example.springtestdemo.bill.UserMapper;
 
 public class UserMapperTest extends BaseTest {
 

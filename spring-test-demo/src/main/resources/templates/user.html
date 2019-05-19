@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>userlist</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+	<h1>用户列表</h1>
+	<a href="/api/index">返回首页</a><br/><br/>
+	<div>
+		<form action="">
+			<table border="1">
+				<thead>
+					<tr>
+						<td>用户ID</td>
+						<td>手机号</td>
+						<td>姓名</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user,iterStat:${userList}" >
+						<td th:text="${user.id}">1</td>
+						<td th:text="${user.cellphone}">183</td>
+						<td th:text="${user.realName}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

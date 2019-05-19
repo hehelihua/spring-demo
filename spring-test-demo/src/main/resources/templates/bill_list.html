@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>userlist</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+	<h1>账单类型列表</h1>
+	<a href="/api/index">返回首页</a><br/><br/>
+	<div>
+		<form action="/api/bill/list" >
+			手机号：<input type="text" name="cellphone"  />
+			时间：<input type="text" name="billTime" />
+			<input type="submit" value="搜索" />
+			<a href="/api/bill/add" >添加</a><br/><br/>
+			<table border="1" style="width: 900px;line-height: 40px;" >
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>手机号</th>
+						<th>姓名</th>
+						<th>账单名称</th>
+						<th>消费金额(元)</th>
+						<th>备注</th>
+						<th>消费时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="bill,iterStat:${billList}">
+						<td th:text="${bill.id}">1</td>
+						<td th:text="${bill.cellphone}">183</td>
+						<td th:text="${bill.realName}">何</td>
+						<td th:text="${bill.typeName}">交通</td>
+						<td th:text="${bill.amount}">6</td>
+						<td th:text="${bill.remark}">上下班</td>
+						<td th:text="${bill.billTime}">20190515</td>
+						<td><a href="/api/bill/update?id=1" >修改</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
